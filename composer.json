@@ -1,0 +1,21 @@
+{
+    "name": "yzchan/yii2-asset-provider",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenyuzou",
+            "email": "chenyuzou@qq.com",
+            "homepage": "https://github.com/yzchan"
+        }
+    ],
+    "homepage": "https://github.com/yzchan/yii2-asset-provider",
+    "minimum-stability": "stable",
+    "provide": {
+        "bower-asset/jquery": "3.6.0",
+        "bower-asset/inputmask": "3.3.11",
+        "bower-asset/punycode": "1.3.2",
+        "bower-asset/yii2-pjax": "2.0.7",
+        "npm-asset/bootstrap": "4.6.2"
+    }
+}

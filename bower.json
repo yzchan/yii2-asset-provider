@@ -1,0 +1,32 @@
+{
+  "name": "yii2-asset-provider",
+  "authors": [
+    "chenyuzou <chenyuzou@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower-asset",
+    "test",
+    "tests"
+  ],
+  "links":[
+    "https://github.com/yiisoft/jquery-pjax",
+    "https://github.com/jquery/jquery",
+    "https://github.com/twbs/bootstrap",
+    "https://github.com/RobinHerbots/Inputmask",
+    "https://github.com/mathiasbynens/punycode.js"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3",
+    "yii2-pjax": "~2.0.1",
+    "jquery": ">=1.11.0",
+    "inputmask": "~3.3.5",
+    "punycode": "~1.3.0"
+  }
+}
