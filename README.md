@@ -21,6 +21,20 @@
 
 不再需要 [composer-asset-plugin](https://github.com/fxpio/composer-asset-plugin) 和 [Asset Packagist](https://asset-packagist.org/)
 
+composer.json中最好再加上replace，可以避免从镜像去读取资源，加快解析速度。
+
+```json
+{
+  "replace": {
+    "bower-asset/jquery": ">=1.11.0",
+    "bower-asset/inputmask": ">=3.2.0",
+    "bower-asset/punycode": ">=1.3.0",
+    "bower-asset/yii2-pjax": ">=2.0.0",
+    "npm-asset/bootstrap": "^4.3"
+  }
+}
+```
+
 ## 程序配置
 
 ```php
