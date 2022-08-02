@@ -1,39 +1,41 @@
 # yii2-asset-provider
 
-提供了Yii2应用程序的Bower Asset依赖，以便国内镜像加速。
+提供了Yii2应用程序的Bower Asset依赖，以便国内镜像加速。摆脱[composer-asset-plugin](https://github.com/fxpio/composer-asset-plugin) 和 [Asset Packagist](https://asset-packagist.org/) 。
 
-## 使用阿里云镜像加速composer
-
-[阿里云 Composer 全量镜像](https://mirrors.aliyun.com/composer/)
+## composer配置如下
 
 ```json
 {
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer/"
-    }
-  }
-}
-```
-
-然后添加本仓库：`composer require yzchan/yii2-asset-provider ~2.0.45`
-
-不再需要 [composer-asset-plugin](https://github.com/fxpio/composer-asset-plugin) 和 [Asset Packagist](https://asset-packagist.org/)
-
-composer.json中最好再加上replace，可以避免从镜像去读取资源，加快解析速度。
-
-```json
-{
+  "require": {
+    "yzchan/yii2-asset-provider": "~2.0.45"
+  },
+  "require-dev": {},
+  "config": {
+    "notify-on-install": false
+  },
   "replace": {
     "bower-asset/jquery": ">=1.11.0",
     "bower-asset/inputmask": ">=3.2.0",
     "bower-asset/punycode": ">=1.3.0",
     "bower-asset/yii2-pjax": ">=2.0.0",
     "npm-asset/bootstrap": "^4.3"
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  ]
 }
 ```
+
+- 只需要配置阿里云镜像即可
+- replace 可以避免解析依赖时去请求这几项资源库，加快解析速度。
+- config.notify-on-install 可以避免安装结束后请求 notification-url
+
+> notify-on-install: 默认为 true。Composer 允许资源仓库定义一个用于通知的 URL，以便有人从其上安装资源包时能够得到一个反馈通知。此选项允许你禁用该行为。
+
+notification-url 是 https://packagist.org/downloads/ 。使用阿里云镜像安装完成之后都会卡一小会，就是请求这个地址导致的。
 
 ## 程序配置
 
